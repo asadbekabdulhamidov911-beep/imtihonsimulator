@@ -126,3 +126,21 @@ MAILERS = {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
 }
+
+
+import os
+import dj_database_url
+
+SECRET_KEY = os.environ.get('SECRET_KEY', 'default-dev-key-if-not-set')
+
+# Debug prodashnda har doim False bo'lishi kerak
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+
+# Railway beradigan barcha domenlarni qabul qilish uchun:
+ALLOWED_HOSTS = ['*'] 
+
+# CSRF xatoliklari chiqmasligi uchun (Railway domenini keyinchalik aniq yozishingiz ham mumkin):
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.railway.app',
+    'https://*.up.railway.app',
+]

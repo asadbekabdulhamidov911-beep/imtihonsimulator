@@ -1,0 +1,1 @@
+web: gunicorn loyiha_nomi.wsgi
