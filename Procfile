@@ -1,1 +1,1 @@
-web: gunicorn loyiha_nomi.wsgi
+web: gunicorn config.wsgi
