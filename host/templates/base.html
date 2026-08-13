@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @property --grad-start {
+            syntax: '<color>';
+            inherits: false;
+            initial-value: #3F5EFB;
+        }
+        @property --grad-end {
+            syntax: '<color>';
+            inherits: false;
+            initial-value: #FC466B;
+        }
+        .radial-gradient-transition {
+            background: radial-gradient(circle, var(--grad-start) 0%, var(--grad-end) 100%);
+            transition: --grad-start 0.5s ease, --grad-end 0.5s ease;
+        }
+        .radial-gradient-transition:hover {
+            --grad-start: #FC466B;
+            --grad-end: #3F5EFB;
+        }
+    </style>
+</head>
+<body class="bg-[linear-gradient(90deg,rgb(9,9,121)_39%,rgb(0,212,255)_100%)] text-[white] font-bold min-h-[100vh] pb-[40px]">
+    <nav class="flex items-center justify-between text-[24px] w-[1400px] mx-auto border-[2px] h-[80px] border-[white] mt-[20px]">
+        <div class="flex items-center">
+            <a href="{% url 'home' %}" class="ml-[20px]">ImtihonSimulator</a>
+        </div>
+        <div class="flex items-center gap-[20px]">
+            <a href="{% url 'savollar' %}">Savollarni ko'rish</a>
+            <a class="mr-[20px]" href="{% url 'javob' %}">Status</a>
+        </div>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

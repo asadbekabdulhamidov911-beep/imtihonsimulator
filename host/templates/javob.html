@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="w-[1400px] mx-auto mt-[60px] text-center">
+    <div class="border-[2px] border-[white] p-[40px] w-[550px] mx-auto mb-[30px]">
+        <h1 class="text-[40px] mb-[20px]">Natijangiz</h1>
+        <p class="text-[28px] mb-[10px]">To'g'ri javoblar: <span class="text-[yellow]">{{ correct }}</span> / {{ total }}</p>
+        <p class="text-[36px] mb-[25px]">Foiz: <span class="text-[yellow]">{{ percentage }}%</span></p>
+        
+        <hr class="border-[white] my-[20px]">
+
+        <div class="text-[20px] text-left flex flex-col gap-[8px]">
+            <p><strong>Boshlangan vaqti:</strong> <span class="text-[yellow]">{{ start_time }}</span></p>
+            <p><strong>Tugallangan vaqti:</strong> <span class="text-[yellow]">{{ end_time }}</span></p>
+            <p><strong>Sarf qilingan vaqt:</strong> <span class="text-[yellow]">{{ duration }}</span></p>
+        </div>
+    </div>
+    
+    <a class="radial-gradient-transition border-[2px] border-[white] px-[20px] py-[10px] text-[24px] text-[white] inline-block"
+        href="{% url 'savollar' %}">
+        Qayta topshirish
+    </a>
+</section>
+{% endblock %}

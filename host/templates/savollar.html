@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="w-[1400px] mx-auto mt-[40px]">
+    <form method="POST" action="{% url 'savollar' %}">
+        {% csrf_token %}
+        
+        {% for q in questions %}
+        <div class="border-[2px] border-[white] p-[20px] mb-[30px]">
+            <h2 class="text-[28px] mb-[15px]">{{ forloop.counter }}. {{ q.text }}</h2>
+            <div class="ml-[20px]">
+                {% for option in q.options.all %}
+                <label class="flex items-center gap-[10px] text-[20px] cursor-pointer mb-[10px]">
+                    <input type="radio" name="question_{{ q.id }}" value="{{ option.id }}" class="w-[20px] h-[20px]" required>
+                    <span>{{ option.text }}</span>
+                </label>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+
+        {% if questions %}
+        <div class="text-center">
+            <button type="submit" class="radial-gradient-transition border-[2px] border-[white] px-[30px] py-[15px] text-[24px] text-[white] cursor-pointer">
+                Javoblarni yuborish
+            </button>
+        </div>
+        {% endif %}
+    </form>
+</section>
+{% endblock %}
