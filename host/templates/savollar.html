@@ -1,18 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section class="w-[1400px] mx-auto mt-[40px]">
+<section class="w-full max-w-[850px] mx-auto mt-[30px] md:mt-[40px]">
     <form method="POST" action="{% url 'savollar' %}">
         {% csrf_token %}
         
         {% for q in questions %}
-        <div class="border-[2px] border-[white] p-[20px] mb-[30px]">
-            <h2 class="text-[28px] mb-[15px]">{{ forloop.counter }}. {{ q.text }}</h2>
-            <div class="ml-[20px]">
+        <div class="bg-[#1e293b] border-[1px] border-white/20 rounded-[16px] p-[22px] md:p-[28px] mb-[20px]">
+            <h2 class="text-[22px] md:text-[26px] font-bold mb-[20px] text-white">
+                <span class="text-[#a78bfa]">{{ forloop.counter }}.</span> {{ q.text }}
+            </h2>
+            <div class="ml-[10px] md:ml-[20px]">
                 {% for option in q.options.all %}
-                <label class="flex items-center gap-[10px] text-[20px] cursor-pointer mb-[10px]">
-                    <input type="radio" name="question_{{ q.id }}" value="{{ option.id }}" class="w-[20px] h-[20px]" required>
-                    <span>{{ option.text }}</span>
+                <label class="flex items-center gap-[12px] text-[18px] md:text-[20px] cursor-pointer mb-[12px] bg-[#0b1120] border-[1px] border-white/20 rounded-[12px] p-[10px]">
+                    <input type="radio" name="question_{{ q.id }}" value="{{ option.id }}" class="w-[20px] h-[20px] accent-[#a78bfa]" required>
+                    <span class="text-white/90">{{ option.text }}</span>
                 </label>
                 {% endfor %}
             </div>
@@ -20,8 +22,8 @@
         {% endfor %}
 
         {% if questions %}
-        <div class="text-center">
-            <button type="submit" class="radial-gradient-transition border-[2px] border-[white] px-[30px] py-[15px] text-[24px] text-[white] cursor-pointer">
+        <div class="text-center mt-[30px]">
+            <button type="submit" class="bg-[#6366f1] border-[2px] border-white/20 px-[35px] py-[15px] text-[22px] md:text-[26px] text-white rounded-full cursor-pointer">
                 Javoblarni yuborish
             </button>
         </div>

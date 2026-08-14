@@ -1,10 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section class="w-[1400px] mx-auto h-[700px] flex justify-center items-center">
-    <a class="radial-gradient-transition border-[2px] border-[white] px-[20px] py-[10px] text-[32px] text-[white]"
-        href="{% url 'savollar' %}">
-        Savollarni Boshlash
-    </a>
+<section class="w-full flex justify-center items-center min-h-[70vh] mt-[20px]">
+    <div class="text-center">
+        <p class="text-[20px] md:text-[24px] text-white/60 mb-[15px]">Bilimingizni sinab ko'ring</p>
+        <h1 class="text-[40px] md:text-[56px] font-bold text-[#a78bfa] mb-[30px] leading-[1.2]">Imtihon Simulator</h1>
+        <a class="inline-block bg-[#6366f1] border-[2px] border-white/20 px-[40px] py-[16px] text-[24px] md:text-[28px] text-white rounded-full"
+            href="{% url 'savollar' %}">
+            Savollarni Boshlash
+        </a>
+    </div>
 </section>
 {% endblock %}

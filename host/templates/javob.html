@@ -1,22 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section class="w-[1400px] mx-auto mt-[60px] text-center">
-    <div class="border-[2px] border-[white] p-[40px] w-[550px] mx-auto mb-[30px]">
-        <h1 class="text-[40px] mb-[20px]">Natijangiz</h1>
-        <p class="text-[28px] mb-[10px]">To'g'ri javoblar: <span class="text-[yellow]">{{ correct }}</span> / {{ total }}</p>
-        <p class="text-[36px] mb-[25px]">Foiz: <span class="text-[yellow]">{{ percentage }}%</span></p>
+<section class="w-full max-w-[1200px] mx-auto mt-[40px] md:mt-[60px] text-center">
+    <div class="bg-[#1e293b] border-[1px] border-white/20 rounded-[20px] p-[30px] md:p-[40px] w-[90%] max-w-[600px] mx-auto mb-[30px]">
+        <h1 class="text-[36px] md:text-[44px] font-bold text-[#a78bfa] mb-[20px]">Natijangiz</h1>
         
-        <hr class="border-[white] my-[20px]">
+        <div class="text-left">
+            <p class="text-[22px] md:text-[26px] mb-[12px] text-white/80">To'g'ri javoblar: <span class="text-[#facc15] font-bold">{{ correct }}</span> / {{ total }}</p>
+            <p class="text-[28px] md:text-[32px] mb-[25px] text-white/80">Foiz: <span class="text-[#facc15] font-bold">{{ percentage }}%</span></p>
+        </div>
+        
+        <hr class="border-white/10 my-[20px]">
 
-        <div class="text-[20px] text-left flex flex-col gap-[8px]">
-            <p><strong>Boshlangan vaqti:</strong> <span class="text-[yellow]">{{ start_time }}</span></p>
-            <p><strong>Tugallangan vaqti:</strong> <span class="text-[yellow]">{{ end_time }}</span></p>
-            <p><strong>Sarf qilingan vaqt:</strong> <span class="text-[yellow]">{{ duration }}</span></p>
+        <div class="text-[18px] md:text-[20px] text-left">
+            <p class="mb-[10px]"><strong class="text-white/70">Boshlangan vaqti:</strong> <span class="text-[#facc15]">{{ start_time }}</span></p>
+            <p class="mb-[10px]"><strong class="text-white/70">Tugallangan vaqti:</strong> <span class="text-[#facc15]">{{ end_time }}</span></p>
+            <p><strong class="text-white/70">Sarf qilingan vaqt:</strong> <span class="text-[#facc15]">{{ duration }}</span></p>
         </div>
     </div>
     
-    <a class="radial-gradient-transition border-[2px] border-[white] px-[20px] py-[10px] text-[24px] text-[white] inline-block"
+    <a class="inline-block bg-[#6366f1] border-[2px] border-white/20 px-[30px] py-[14px] text-[22px] md:text-[26px] text-white rounded-full"
         href="{% url 'savollar' %}">
         Qayta topshirish
     </a>

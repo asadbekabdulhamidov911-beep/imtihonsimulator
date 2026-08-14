@@ -1,58 +1,62 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section class="w-[1400px] mx-auto mt-[40px]">
-    <div class="border-[2px] border-[white] p-[30px] mb-[40px]">
-        <h2 class="text-[32px] mb-[20px]">Savol Qo'shish</h2>
+<section class="w-full max-w-[1200px] mx-auto mt-[30px] md:mt-[40px]">
+    <!-- Savol qo'shish formasi -->
+    <div class="bg-[#1e293b] border-[1px] border-white/20 rounded-[20px] p-[25px] md:p-[35px] mb-[30px]">
+        <h2 class="text-[28px] md:text-[34px] font-bold text-[#a78bfa] mb-[25px]">Savol Qo'shish</h2>
         
         <form method="POST" action="{% url 'admin_panel' %}">
             {% csrf_token %}
             
             <div class="mb-[20px]">
-                <label class="text-[20px] block mb-[10px]">Savol matni:</label>
-                <input type="text" name="question_text" required class="border-[2px] border-[white] bg-[transparent] p-[10px] text-[20px] outline-none w-[100%]">
+                <label class="text-[18px] md:text-[20px] block mb-[10px] text-white/70">Savol matni:</label>
+                <input type="text" name="question_text" required class="border-[1px] border-white/20 bg-[#0b1120] p-[12px] text-[18px] md:text-[20px] outline-none w-[100%] rounded-[12px] text-white placeholder-white/30">
             </div>
 
-            <div class="mb-[20px]">
-                <label class="text-[20px] block mb-[15px]">Variantlar (To'g'ri javobni tanlang):</label>
+            <div class="mb-[25px]">
+                <label class="text-[18px] md:text-[20px] block mb-[15px] text-white/70">Variantlar (To'g'ri javobni tanlang):</label>
                 
                 <div class="flex items-center gap-[15px] mb-[10px]">
-                    <input type="radio" name="correct_option" value="0" checked class="w-[20px] h-[20px]">
-                    <input type="text" name="options" placeholder="1-variant" required class="border-[2px] border-[white] bg-[transparent] p-[8px] text-[18px] w-[100%] outline-none">
+                    <input type="radio" name="correct_option" value="0" checked class="w-[20px] h-[20px] accent-[#a78bfa]">
+                    <input type="text" name="options" placeholder="1-variant" required class="border-[1px] border-white/20 bg-[#0b1120] p-[10px] text-[16px] md:text-[18px] w-[100%] outline-none rounded-[12px] text-white placeholder-white/30">
                 </div>
 
                 <div class="flex items-center gap-[15px] mb-[10px]">
-                    <input type="radio" name="correct_option" value="1" class="w-[20px] h-[20px]">
-                    <input type="text" name="options" placeholder="2-variant" required class="border-[2px] border-[white] bg-[transparent] p-[8px] text-[18px] w-[100%] outline-none">
+                    <input type="radio" name="correct_option" value="1" class="w-[20px] h-[20px] accent-[#a78bfa]">
+                    <input type="text" name="options" placeholder="2-variant" required class="border-[1px] border-white/20 bg-[#0b1120] p-[10px] text-[16px] md:text-[18px] w-[100%] outline-none rounded-[12px] text-white placeholder-white/30">
                 </div>
 
                 <div class="flex items-center gap-[15px] mb-[10px]">
-                    <input type="radio" name="correct_option" value="2" class="w-[20px] h-[20px]">
-                    <input type="text" name="options" placeholder="3-variant" class="border-[2px] border-[white] bg-[transparent] p-[8px] text-[18px] w-[100%] outline-none">
+                    <input type="radio" name="correct_option" value="2" class="w-[20px] h-[20px] accent-[#a78bfa]">
+                    <input type="text" name="options" placeholder="3-variant" class="border-[1px] border-white/20 bg-[#0b1120] p-[10px] text-[16px] md:text-[18px] w-[100%] outline-none rounded-[12px] text-white placeholder-white/30">
                 </div>
 
                 <div class="flex items-center gap-[15px] mb-[10px]">
-                    <input type="radio" name="correct_option" value="3" class="w-[20px] h-[20px]">
-                    <input type="text" name="options" placeholder="4-variant" class="border-[2px] border-[white] bg-[transparent] p-[8px] text-[18px] w-[100%] outline-none">
+                    <input type="radio" name="correct_option" value="3" class="w-[20px] h-[20px] accent-[#a78bfa]">
+                    <input type="text" name="options" placeholder="4-variant" class="border-[1px] border-white/20 bg-[#0b1120] p-[10px] text-[16px] md:text-[18px] w-[100%] outline-none rounded-[12px] text-white placeholder-white/30">
                 </div>
             </div>
 
-            <button type="submit" class="radial-gradient-transition border-[2px] border-[white] px-[20px] py-[10px] text-[20px] text-[white] cursor-pointer">
+            <button type="submit" class="bg-[#6366f1] border-[2px] border-white/20 px-[25px] py-[12px] text-[18px] md:text-[20px] text-white rounded-full cursor-pointer">
                 Saqlash
             </button>
         </form>
     </div>
 
-    <div class="border-[2px] border-[white] p-[30px] mb-[50px]">
-        <h2 class="text-[32px] mb-[20px]">Mavjud Savollar</h2>
+    <!-- Mavjud savollar -->
+    <div class="bg-[#1e293b] border-[1px] border-white/20 rounded-[20px] p-[25px] md:p-[35px] mb-[50px]">
+        <h2 class="text-[28px] md:text-[34px] font-bold text-[#a78bfa] mb-[25px]">Mavjud Savollar</h2>
         <div>
             {% for q in questions %}
-            <div class="border-[1px] border-[white] p-[15px] flex justify-between items-start mb-[20px]">
-                <div>
-                    <h3 class="text-[22px]">{{ forloop.counter }}. {{ q.text }}</h3>
+            <div class="border-[1px] border-white/20 bg-[#0b1120] rounded-[16px] p-[20px] flex justify-between items-start mb-[20px]">
+                <div class="w-[80%]">
+                    <h3 class="text-[20px] md:text-[24px] font-bold text-white mb-[10px]">
+                        <span class="text-[#a78bfa]">{{ forloop.counter }}.</span> {{ q.text }}
+                    </h3>
                     <ul class="ml-[20px] mt-[10px] list-disc">
                         {% for opt in q.options.all %}
-                        <li class="text-[18px] {% if opt.is_correct %}text-[yellow]{% endif %}">
+                        <li class="text-[16px] md:text-[18px] mb-[5px] {% if opt.is_correct %}text-[#4ade80]{% else %}text-white/70{% endif %}">
                             {{ opt.text }} {% if opt.is_correct %}(To'g'ri javob){% endif %}
                         </li>
                         {% endfor %}
@@ -62,7 +66,7 @@
                 <form method="POST" action="{% url 'admin_panel' %}">
                     {% csrf_token %}
                     <input type="hidden" name="delete_question_id" value="{{ q.id }}">
-                    <button type="submit" class="border-[2px] border-[red] text-[red] px-[15px] py-[5px] text-[16px] cursor-pointer hover:bg-[red] hover:text-[white] transition-all">
+                    <button type="submit" class="border-[2px] border-[#ef4444] text-[#ef4444] px-[18px] py-[8px] text-[14px] md:text-[16px] rounded-full cursor-pointer bg-transparent">
                         O'chirish
                     </button>
                 </form>
@@ -71,4 +75,21 @@
         </div>
     </div>
 </section>
+
+<style>
+    /* Kichik ekranlarda savol qatorini vertikal joylashtirish (flex-col ishlatmasdan) */
+    @media (max-width: 640px) {
+        .question-row {
+            display: block;
+        }
+        .question-row > div:first-child {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        .question-row > form {
+            display: block;
+            text-align: left;
+        }
+    }
+</style>
 {% endblock %}

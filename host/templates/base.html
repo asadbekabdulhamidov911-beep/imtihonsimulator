@@ -5,39 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style>
-        @property --grad-start {
-            syntax: '<color>';
-            inherits: false;
-            initial-value: #3F5EFB;
-        }
-        @property --grad-end {
-            syntax: '<color>';
-            inherits: false;
-            initial-value: #FC466B;
-        }
-        .radial-gradient-transition {
-            background: radial-gradient(circle, var(--grad-start) 0%, var(--grad-end) 100%);
-            transition: --grad-start 0.5s ease, --grad-end 0.5s ease;
-        }
-        .radial-gradient-transition:hover {
-            --grad-start: #FC466B;
-            --grad-end: #3F5EFB;
-        }
-    </style>
 </head>
-<body class="bg-[linear-gradient(90deg,rgb(9,9,121)_39%,rgb(0,212,255)_100%)] text-[white] font-bold min-h-[100vh] pb-[40px]">
-    <nav class="flex items-center justify-between text-[24px] w-[1400px] mx-auto border-[2px] h-[80px] border-[white] mt-[20px]">
+<body class="bg-[#0b1120] text-white min-h-[100vh] pb-[60px]">
+    <nav class="w-full max-w-[1200px] mx-auto flex items-center justify-between h-[70px] px-[20px] md:px-[30px] mt-[15px] bg-[#1e293b] border-[1px] border-white/20 rounded-[16px]">
         <div class="flex items-center">
-            <a href="{% url 'home' %}" class="ml-[20px]">ImtihonSimulator</a>
+            <a href="{% url 'home' %}" class="text-[22px] md:text-[26px] font-bold text-[#a78bfa]">ImtihonSimulator</a>
         </div>
-        <div class="flex items-center gap-[20px]">
-            <a href="{% url 'savollar' %}">Savollarni ko'rish</a>
-            <a class="mr-[20px]" href="{% url 'javob' %}">Status</a>
+        <div class="flex items-center gap-[15px] md:gap-[25px]">
+            <a href="{% url 'savollar' %}" class="text-[18px] md:text-[20px] text-white/80 font-medium">Savollarni ko'rish</a>
+            <a href="{% url 'javob' %}" class="text-[18px] md:text-[20px] text-white/80 font-medium">Status</a>
         </div>
     </nav>
 
-    {% block content %}
-    {% endblock %}
+    <main class="w-full max-w-[1200px] mx-auto px-[15px] md:px-[20px]">
+        {% block content %}
+        {% endblock %}
+    </main>
 </body>
 </html>
